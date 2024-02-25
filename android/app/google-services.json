@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "841953437513",
+    "project_id": "covid-counter-app-2b992",
+    "storage_bucket": "covid-counter-app-2b992.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:841953437513:android:5defd84c121cb5cbcf5c98",
+        "android_client_info": {
+          "package_name": "com.example.covid_counter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPWuphZXEBm8iL2xZuXMKm7lvc17N70S8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
