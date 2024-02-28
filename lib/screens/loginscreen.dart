@@ -143,7 +143,7 @@ class _LoginScreenState extends State<LoginScreen> {
     String password = passwordcontroller.text;
     User? user = await _auth.signinWithEmailAndPassword(email, password);
     if (user != null) {
-      print("work is done ");
+      print(user);
       Navigator.pushReplacementNamed(context, '/homescreen');
     } else {
       print("there is some error");
