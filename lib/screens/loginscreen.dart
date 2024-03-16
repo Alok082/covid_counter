@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../firebaseimplementation/firebase_auth_services.dart';
 import '../reusable_Widget/resuable_widget.dart';
@@ -12,7 +13,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  FirebaseAuthServices _auth = FirebaseAuthServices();
+  final FirebaseAuthServices _auth = Get.put(FirebaseAuthServices());
 
   TextEditingController emailcontroller = TextEditingController();
   TextEditingController passwordcontroller = TextEditingController();

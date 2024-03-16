@@ -1,6 +1,7 @@
 import 'package:covid_counter/firebaseimplementation/firebase_auth_services.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../reusable_Widget/resuable_widget.dart';
 
@@ -12,7 +13,7 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
-  FirebaseAuthServices _auth = FirebaseAuthServices();
+  FirebaseAuthServices _auth = Get.put(FirebaseAuthServices());
   TextEditingController emailcontroller = TextEditingController();
   TextEditingController passwordcontroller = TextEditingController();
   TextEditingController namecontroller = TextEditingController();

@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:http/http.dart' as http;
 
 import 'package:flutter/material.dart';
@@ -21,10 +22,9 @@ class _HomeScreenState extends State<HomeScreen> {
   // Calltheapi apicall = Calltheapi();
 
   Future<void> fetchData() async {
-    print("1");
     final response = await http
         .get(Uri.parse('https://api.rootnet.in/covid19-in/stats/latest'));
-    print("2");
+
     if (response.statusCode == 200) {
       print(response.body);
       final Map<String, dynamic> data = json.decode(response.body);
@@ -63,24 +63,18 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           Row(
             children: [
-              GestureDetector(
-                onTap: () {
-                  fetchData();
+              IconButton(
+                onPressed: () {
+                  FirebaseAuth.instance.signOut().then((value) {
+                    print("signout");
+                    Navigator.pushReplacementNamed(context, '/loginScreen');
+                  });
                 },
-                child: const Text("fetch"),
+                icon: Icon(
+                  Icons.logout_outlined,
+                  color: Colors.black,
+                ),
               ),
-              // IconButton(
-              //   onPressed: () {
-              //     FirebaseAuth.instance.signOut().then((value) {
-              //       print("signout");
-              //       Navigator.pushReplacementNamed(context, '/loginScreen');
-              //     });
-              //   },
-              //   icon: Icon(
-              //     Icons.logout_outlined,
-              //     color: Colors.black,
-              //   ),
-              // ),
             ],
           )
         ],
